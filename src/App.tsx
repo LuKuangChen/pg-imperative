@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Viz } from './Viz';
-import { exampleState1, step } from './core';
+import { cell, exampleState1, state, step } from './core';
 import { textEditor, program } from './Editor';
 
 
@@ -10,14 +10,22 @@ import { textEditor, program } from './Editor';
 function App() {
   const [state, setState] = useState({
     originalGrid: exampleState1,
-    currentGrid: JSON.parse(JSON.stringify(exampleState1)),
+    currentGrid: JSON.parse(JSON.stringify(exampleState1)) as state,
     programContent: ["tcw", "mov", "mov"] as program,
     programIndex: 0,
     running: null as null | NodeJS.Timer
   });
+  const hasWon = state.currentGrid.gridContent.every((cs) => {
+    return cs.every((c) => {
+      return (c.kind === "empty" || ! c.hasTrash)
+    })
+  })
   return (
     <div className="App">
       {Viz(state.currentGrid)}
+      <div>
+        {hasWon ? "You has won!" : ""}
+      </div>
       <button onClick={(e) => {
         e.preventDefault();
         resetState();

@@ -16,6 +16,7 @@ const Cell = (cell: cell, robot?: JSX.Element) => {
     return (
         <div className={`grid-cell cell-${cell.kind}`}>
             {robot}
+            {(cell.kind == "filled" && cell.hasTrash) ? "🫘" : ""}
         </div>
     )
 }
