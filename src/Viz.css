@@ -1,0 +1,46 @@
+#grid {
+}
+
+.grid-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.grid-cell {
+    width: 3em;
+    height: 3em;
+    border: 1px solid lightgrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-cell.cell-filled {
+    background-color: white;
+}
+.grid-cell.cell-empty {
+    background-color: gray;
+}
+
+.robot {
+    box-sizing: border-box;
+    border: 5px solid darkblue;
+    border-radius: 1em;
+    width: 2em;
+    height: 2em;
+}
+.robot-facing-right {
+    border-right-color: lightskyblue;
+}
+
+.robot-facing-left {
+    border-left-color: lightskyblue;
+}
+
+.robot-facing-top {
+    border-top-color: lightskyblue;
+}
+
+.robot-facing-bottom {
+    border-bottom-color: lightskyblue;
+}
