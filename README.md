@@ -1,3 +1,12 @@
+# Robot Game
+
+TODO:
+
+- [x] delete instruction
+- [x] move instruction
+- [ ] more challenges
+- [ ] better UI
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

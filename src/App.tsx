@@ -3,15 +3,16 @@ import logo from './logo.svg';
 import './App.css';
 import { Viz } from './Viz';
 import { cell, exampleState1, state, step } from './core';
-import { textEditor, program } from './Editor';
+import { textEditor, Program, graphicalEditor } from './Editor';
 
 
+const defaultProgramContent: Program = ["mov", "tcw", "tcc", "mov"]
 
 function App() {
   const [state, setState] = useState({
     originalGrid: exampleState1,
     currentGrid: JSON.parse(JSON.stringify(exampleState1)) as state,
-    programContent: ["tcw", "mov", "mov"] as program,
+    programContent: defaultProgramContent,
     programIndex: 0,
     running: null as null | NodeJS.Timer
   });
@@ -57,7 +58,7 @@ function App() {
       }}>
         Reset
       </button>
-      {textEditor(state.programContent, (programContent) => setState({
+      {graphicalEditor(state.programContent, (programContent) => setState({
         ...state,
         programContent,
         programIndex: 0
@@ -69,6 +70,7 @@ function App() {
     setState({
       ...state,
       currentGrid: JSON.parse(JSON.stringify(state.originalGrid)),
+      // programContent: defaultProgramContent,
       programIndex: 0
     });
   }

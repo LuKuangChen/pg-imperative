@@ -15,36 +15,36 @@
 }
 
 .grid-cell.cell-filled {
-    background-color: white;
+    background-color: lightgoldenrodyellow;
 }
 
 .grid-cell.cell-empty {
-    background-color: gray;
+    background-color: lightblue;
 }
 
 .robot {
-    background-color: lightblue;
+    background-color: lightgray;
     box-sizing: border-box;
-    border: 5px solid darkblue;
+    border: 5px solid darkgray;
     border-radius: 1em;
     width: 2em;
     height: 2em;
 }
 
 .robot-facing-right {
-    border-right-color: lightskyblue;
+    border-right-color: greenyellow;
 }
 
 .robot-facing-left {
-    border-left-color: lightskyblue;
+    border-left-color: greenyellow;
 }
 
 .robot-facing-top {
-    border-top-color: lightskyblue;
+    border-top-color: greenyellow;
 }
 
 .robot-facing-bottom {
-    border-bottom-color: lightskyblue;
+    border-bottom-color: greenyellow;
 }
 
 .grid-cell.cell-empty .robot-facing-right {

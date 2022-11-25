@@ -1,0 +1,40 @@
+#editor-program *, #editor-panel * {
+    box-sizing: border-box;
+    user-select: none;
+}
+
+#editor-program {
+    display: flex;
+    flex-direction: column;
+}
+
+#editor-program>div.editor-instruction,
+#editor-panel>div {
+    display: inline-flex;
+    border: 1px solid black;
+    border-radius: 0.3ex;
+    height: 2em;
+    /* width: 2em; */
+    justify-content: center;
+    align-items: center;
+}
+#editor-panel>div {
+    width: 2em;
+}
+
+#editor-panel {
+    display: flex;
+    flex-direction: row;
+    padding: 1em;
+    background-color: antiquewhite;
+}
+
+.editor-placeholder {
+    background-color: lightgreen;
+    /* width: 2em; */
+    height: 1em;
+}
+
+#editor-panel>div {
+    cursor: grab;
+}

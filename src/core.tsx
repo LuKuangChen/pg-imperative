@@ -1,4 +1,4 @@
-import { instruction } from "./Editor";
+import { Instruction } from "./Editor";
 
 export type dir = "top" | "bottom" | "left" | "right";
 export type location = [number, number];
@@ -72,7 +72,7 @@ export const getCell = (state: state, i: number, j: number): cell => {
     return state.gridContent[i][j];
 };
 
-export const step = (state: state, instruction: instruction): state | null => {
+export const step = (state: state, instruction: Instruction): state | null => {
     const [i, j] = state.robotAt;
     if (!(0 <= i && i < state.gridHeight)) {
         return null;
@@ -100,7 +100,7 @@ export const step = (state: state, instruction: instruction): state | null => {
             return {
                 ...state,
                 gridContent,
-                robotAt: [i + di, j + dj]
+                robotAt: [i2, j2]
             };
         }
         case "tcw": {
