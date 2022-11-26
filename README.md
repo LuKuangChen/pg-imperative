@@ -6,6 +6,7 @@ TODO:
 - [x] move instruction
 - [ ] more challenges
 - [ ] better UI
+- [ ] the ability to define helper functions
 
 # Getting Started with Create React App
 
