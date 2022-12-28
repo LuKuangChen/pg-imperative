@@ -60,9 +60,9 @@ const iconOfInstruction: Record<Instruction, string> = {
     "tcc": "↺",
 };
 const labelOfInstruction: Record<Instruction, string> = {
-    "mov": "forward",
-    "tcw": "turn_right",
-    "tcc": "turn_left",
+    "mov": "Forward",
+    "tcw": "Turn Right",
+    "tcc": "Turn Left",
 };
 
 const elementOfInstruction = (i: Instruction, pos: number) => {

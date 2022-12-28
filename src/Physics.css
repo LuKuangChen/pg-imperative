@@ -1,0 +1,16 @@
+.PhysicsScene {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+}
+.PhysicsScene>div {
+    position: absolute;
+    transition-property: all;
+    transition-timing-function: ease;
+    transition-duration: 1s;
+    overflow: hidden;
+}
+.PhysicsScene>div * {
+    overflow: hidden;
+}

@@ -4,9 +4,53 @@ import './App.css';
 import { Viz } from './Viz';
 import { cell, exampleState1, state, step } from './core';
 import { textEditor, Program, graphicalEditor } from './Editor';
+import { PhysicsObject, Scene } from './Physics';
 
 
-const defaultProgramContent: Program = ["mov", "tcw", "tcc", "mov"]
+const defaultProgramContent: Program = ["mov", "tcw", "tcc", "mov"];
+
+function $<X>(x: X, fs: ((x: X) => X)[]): X {
+  for (const f of fs) {
+    x = f(x);
+  }
+  return x;
+}
+
+// let counter = 0;
+// function newObject(): PhysicsObject {
+//   const id = "" + (counter++);
+//   return {
+//     id: id,
+//     position: { x: 0, y: Math.round(Math.random() * 499) },
+//     range: { x: 10, y: 10 },
+//     content: <div style={{ width: "100%", height: "100%", backgroundColor: "brown" }}></div>
+//   };
+// }
+// function updateObject(o: PhysicsObject): PhysicsObject {
+//   return {
+//     ...o,
+//     position: {
+//       ...o.position,
+//       x: (o.position.x + 20) % 500
+//     }
+//   };
+// }
+
+// const addObject: (x: PhysicsObject[]) => PhysicsObject[] =
+//   (state) => [newObject(), ...state];
+
+// const initWorld = $(
+//   [] as PhysicsObject[],
+//   [
+//     // (state) => state.map(updateObject),
+//     addObject,
+//     addObject
+//   ]
+// );
+// function App() {
+//   const [state, setState] = useState(initWorld);
+//   return <Scene objects={state} />;
+// }
 
 function App() {
   const [state, setState] = useState({
